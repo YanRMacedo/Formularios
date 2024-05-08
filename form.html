@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário</title>
 </head>
+
 <body>
     <h1>Testando um novo formulário</h1>
-    <form action="#" method="post" autocomplete="on">
+    <form action="cadastro.php" method="post" autocomplete="on">
         <fieldset>
             <legend>Dados Pessoais</legend>
             <div>
@@ -19,26 +21,30 @@
                 <input type="text" name="rg" id="irg">
                 <label for="icpf">CPF:</label>
                 <input type="text" name="cpf" id="icpf">
+                <label for="inasc">Data de nascimento:</label>
+                <input type="date" name="nasc" id="inasc">
             </div>
         </fieldset>
         <fieldset>
             <div>
                 <label for="imae">Nome da Mãe:</label>
-                <input type="text" name="nmae" id="imae">
+                <input type="text" name="nmae" id="imae" required>
                 <label for="celmae">Número de celular:</label>
-                <input type="tel" name="mcel" id="celmae">
+                <input type="tel" name="mcel" id="celmae" placeholder="(xx)xxxxx-xxxx" pattern="^\(\d{2}\)\d{4,5}-\d{4}$" required>
             </div>
             <div>
                 <label for="ipai">Nome do Pai:</label>
                 <input type="text" name="npai" id="ipai">
                 <label for="celpai">Número de celular:</label>
-                <input type="tel" name="pcel" id="celpai">
+                <input type="tel" name="pcel" id="celpai" placeholder="(xx)xxxxx-xxxx" pattern="^\(\d{2}\)\d{4,5}-\d{4}$">
             </div>
         </fieldset>
+        <p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </p>
     </form>
-    <p>
-        <input type="submit" value="Enviar">
-        <input type="reset" value="Limpar">
-    </p>
+
 </body>
+
 </html>

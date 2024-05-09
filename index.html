@@ -21,15 +21,12 @@
                 <label for="irg">RG:</label>
                 <input type="text" name="rg" id="irg" required minlength="9" maxlength="14" size="10">
                 <label for="icpf">CPF:</label>
-                <input type="text" name="cpf" id="icpf" minlength="9" maxlength="14" size="10">
+                <input type="text" name="cpf" id="icpf" minlength="9" maxlength="14" size="10" required>
                 <label for="inasc">Data de nascimento:</label> 
                 <input type="date" name="nasc" id="inasc" required>
-                <label for="msexo">M</label> 
-                <input type="radio" name="sexo" id="msexo">
-                <label for="fsexo">F</label>
-                <input type="radio" name="sexo" id="fsexo">
-                <label for="nsexo">N</label> 
-                <input type="radio" name="sexo" id="nsexo" value="N" required><br>
+                <label for="msexo" class="ssexo">M</label> <input type="radio" name="sexo" id="msexo">
+                <label for="fsexo" class="ssexo">F</label> <input type="radio" name="sexo" id="fsexo">
+                <label for="nsexo" class="ssexo">N</label> <input type="radio" name="sexo" id="nsexo" value="N" required><br>
                 <label for="imae">Nome da Mãe:</label>
                 <input type="text" name="nmae" id="imae" required>
                 <label for="celmae">Número de celular:</label>

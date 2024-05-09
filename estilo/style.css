@@ -35,6 +35,10 @@ legend {
     margin: 5px;
 }
 
+.pessoa > label > .ssexo {
+   font-size: 2em;
+}
+
 .escolar {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 15px;

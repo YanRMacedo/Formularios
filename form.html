@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário</title>
 </head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    fieldset {
+        margin: 10px;
+    }
+</style>
 
 <body>
     <h1>Testando um novo formulário</h1>
@@ -23,28 +33,52 @@
                 <input type="text" name="cpf" id="icpf">
                 <label for="inasc">Data de nascimento:</label>
                 <input type="date" name="nasc" id="inasc" required>
-            </div>
-        </fieldset>
-        <fieldset>
-            <div>
+                <label for="msexo">M<label>
+                <input type="radio" name="sexo" id="msexo" value="M">
+                <label for="fsexo">F</label>
+                <input type="radio" name="sexo" id="fsexo" value="F"> <br>
                 <label for="imae">Nome da Mãe:</label>
                 <input type="text" name="nmae" id="imae" required>
                 <label for="celmae">Número de celular:</label>
                 <input type="tel" name="mcel" id="celmae" placeholder="(xx)xxxxx-xxxx" pattern="^\(\d{2}\)\d{4,5}-\d{4}$" required>
-            </div>
-            <div>
                 <label for="ipai">Nome do Pai:</label>
                 <input type="text" name="npai" id="ipai">
                 <label for="celpai">Número de celular:</label>
-                <input type="tel" name="pcel" id="celpai" placeholder="(xx)xxxxx-xxxx" pattern="^\(\d{2}\)\d{4,5}-\d{4}$">
+                <input type="tel" name="pcel" id="celpai" placeholder="(xx)xxxxx-xxxx" pattern="^\(\d{2}\)\d{4,5}-\d{4}$"> <br>
+                <label for="nat">Naturalidade:</label>
+                <input type="text" name="naturacao" id="nat">
+                <label for="nacion">Nacionalidade:</label>
+                <input type="text" name="nacional" id="nacion"> <br>
+                <label for="ender">Endereço:</label>
+                <input type="text" name="logradouro" id="ender">
+                <label for="bairo">Bairro:</label>
+                <input type="text" name="local" id="bairo">
+                <label for="cid">Cidade:</label>
+                <input type="text" name="ncid" id="cid">
+                <label for="est">Estado:</label>
+                <input type="text" name="estad" id="est"> <br>
+                <label for="icep">CEP:</label>
+                <input type="text" name="ecep" id="icep">
+                <label for="eemail">E-mail:</label>
+                <input type="email" name="iemail" id="eemail">
             </div>
+        </fieldset>
+        <fieldset>
+            <legend>Dados Escolares</legend>
+            <label for="escola">Grau de Escolaridade:</label>
+            <select name="iescola" id="escola">
+                <option value="EF">Ensino Fundamental</option>
+                <option value="EM">Ensino Médio Completo</option>
+                <option value="EMI">Ensino Médio Incompleto</option>
+                <option value="EMT">Ensino Médio Técnico</option>
+                <option value="ES">Ensino Superior</option>
+                <option value="PG">Pós-Graduação</option>
+            </select>
         </fieldset>
         <p>
             <input type="submit" value="Enviar">
             <input type="reset" value="Limpar">
         </p>
     </form>
-
 </body>
-
 </html>

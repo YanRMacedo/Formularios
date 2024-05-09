@@ -4,51 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo/style.css">
     <title>Formulário</title>
 </head>
-<style>
-    * {
-        padding: 0;
-        margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-    fieldset {
-        margin: 10px;
-    }
-</style>
 
 <body>
     <h1>Testando um novo formulário</h1>
     <form action="cadastro.php" method="post" autocomplete="on">
         <fieldset>
             <legend>Dados Pessoais</legend>
-            <div>
+            <div class="pessoa">
                 <label for="inome">Nome:</label>
                 <input type="text" name="nome" id="inome" required>
                 <label for="iidade">Idade:</label>
                 <input type="number" name="idad" id="iidade" required>
                 <label for="irg">RG:</label>
-                <input type="text" name="rg" id="irg" required>
+                <input type="text" name="rg" id="irg" required minlength="9" maxlength="14" size="10">
                 <label for="icpf">CPF:</label>
-                <input type="text" name="cpf" id="icpf">
-                <label for="inasc">Data de nascimento:</label>
+                <input type="text" name="cpf" id="icpf" minlength="9" maxlength="14" size="10">
+                <label for="inasc">Data de nascimento:</label> 
                 <input type="date" name="nasc" id="inasc" required>
-                <label for="msexo">M<label>
-                <input type="radio" name="sexo" id="msexo" value="M">
+                <label for="msexo">M</label> 
+                <input type="radio" name="sexo" id="msexo">
                 <label for="fsexo">F</label>
-                <input type="radio" name="sexo" id="fsexo" value="F"> <br>
+                <input type="radio" name="sexo" id="fsexo">
+                <label for="nsexo">N</label> 
+                <input type="radio" name="sexo" id="nsexo" value="N" required><br>
                 <label for="imae">Nome da Mãe:</label>
                 <input type="text" name="nmae" id="imae" required>
                 <label for="celmae">Número de celular:</label>
-                <input type="tel" name="mcel" id="celmae" placeholder="(xx)xxxxx-xxxx" pattern="^\(\d{2}\)\d{4,5}-\d{4}$" required>
+                <input type="tel" name="mcel" id="celmae" placeholder="(xx)xxxxx-xxxx" pattern="^\(\d{2}\)\d{4,5}-\d{4}$"  size="10">
                 <label for="ipai">Nome do Pai:</label>
                 <input type="text" name="npai" id="ipai">
                 <label for="celpai">Número de celular:</label>
-                <input type="tel" name="pcel" id="celpai" placeholder="(xx)xxxxx-xxxx" pattern="^\(\d{2}\)\d{4,5}-\d{4}$"> <br>
+                <input type="tel" name="pcel" id="celpai" placeholder="(xx)xxxxx-xxxx" pattern="^\(\d{2}\)\d{4,5}-\d{4}$"  size="10"> <br>
                 <label for="nat">Naturalidade:</label>
-                <input type="text" name="naturacao" id="nat">
+                <input type="text" name="naturacao" id="nat" placeholder="RJ, MG, SP..."  size="1">
                 <label for="nacion">Nacionalidade:</label>
-                <input type="text" name="nacional" id="nacion"> <br>
+                <input type="text" name="nacional" id="nacion" size="10"> <br>
                 <label for="ender">Endereço:</label>
                 <input type="text" name="logradouro" id="ender">
                 <label for="bairo">Bairro:</label>
@@ -56,17 +49,18 @@
                 <label for="cid">Cidade:</label>
                 <input type="text" name="ncid" id="cid">
                 <label for="est">Estado:</label>
-                <input type="text" name="estad" id="est"> <br>
+                <input type="text" name="estad" id="est" maxlength="2" size="1"> <br>
                 <label for="icep">CEP:</label>
-                <input type="text" name="ecep" id="icep">
+                <input type="text" name="ecep" id="icep" placeholder="xxxxx-xxx" maxlength="9" size="5">
                 <label for="eemail">E-mail:</label>
-                <input type="email" name="iemail" id="eemail">
+                <input type="email" name="iemail" id="eemail" size="20">
             </div>
         </fieldset>
         <fieldset>
             <legend>Dados Escolares</legend>
-            <label for="escola">Grau de Escolaridade:</label>
+            <label for="escola" class="escolar">Grau de Escolaridade:</label>
             <select name="iescola" id="escola">
+                <option value=""></option>
                 <optgroup label="Nível escolar">
                     <option value="EF">Ensino Fundamental</option>
                     <option value="EM">Ensino Médio Completo</option>
@@ -80,12 +74,28 @@
                     <option value="MT">Mestrado</option>
                     <option value="DT">Doutorado</option>
                 </optgroup>
-            </select>
+            </select><br>
+            <div class="profissao">
+                <label for="iprof">Profissão:</label>
+                <input type="text" name="prof" id="iprof" list="listprof">
+                <datalist id="listprof">
+                    <option value="HIS">Prof de História</option>
+                    <option value="GEO">Prof de Geografia</option>
+                    <option value="BIO">Prof de Biologia</option>
+                    <option value="MAT">Prof de Matemática</option>
+                    <option value="PORT">Prof de Português</option>
+                    <option value="RED">Prof de Redação</option>
+                    <option value="ING">Prof de Inglês</option>
+                    <option value="ESP">Prof de Espanhol</option>
+                </datalist>
+            </div>
         </fieldset>
-        <p>
+        <div class="botoes">
             <input type="submit" value="Enviar">
             <input type="reset" value="Limpar">
-        </p>
+        </div>
+
     </form>
 </body>
+
 </html>
